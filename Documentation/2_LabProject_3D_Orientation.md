@@ -70,4 +70,4 @@ To develop the task delivery for this seminar you have to:
 - You will have to create a new `3_LabProject_Delivery.md` markdown document including a short description of:
   - what you have done
   - how you have proceed with the questions we suggest in last section
-  - your final conclusions 
+  - your final conclusions including a discussion on how you can use these tools in your `avant-projecte` or also in your `TFG` or future engineering projects.
