@@ -1,9 +1,9 @@
 # **REPORT Practice 1: GEB Projects tools**
 ## ***Group 3: David Bonillo, Adrià Francès, Francisca García***
 
-The first part of the practice consisted on getting familiarized with github and Visual Studio Code, which would syncronize the changes made on the files with the repository. Then, a simple exercise was performed: to blink a LED using an ESP32 board programmed with PlatformIO and the Arduino framework inside Visual Studio Code. A crucial step for this activity was to verify that the pin of the LED was correctly specified in the source code. 
+The first part of the practice consisted on getting familiarized with github and Visual Studio Code, which would syncronize the changes made on the files with the repository. Then, a simple exercise was performed: to blink a LED using an ESP32 board programmed with PlatformIO and the Arduino framework inside Visual Studio Code. A crucial step for this activity was to verify that the pin of the LED was correctly specified in the source code. Once familiarized with VSC, GitHub and the basic devices, we proceeded with a practical case. 
 
-### Case example: 3D orientation in space
+### 3D orientation in space
 ----
 The case example consisted in usign an ESP32 (IP:192.168.1.32) based PCB board with an IMU (Inertial Mass Unit) sensor to obtain 3D orientation in a 3D space. The IMU integrates three sensors (a gyroscope to measure the angular speed, an accelerometer to measure the linear accelaration and a compass to have a reference to the geographical world) and a DMP microcontroller to process data an obtain its proper RPY (Roll-Pitch-Yaw) 3-D orientation.   
 
