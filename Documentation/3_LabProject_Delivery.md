@@ -11,5 +11,6 @@ The next step was to build up the Hardware-Software setup. The **hardware setup*
 
   1. Firstly, we connected the Harware setup
   2. Then, we uploaded the Arduino program (`Endowrist_IMU`) to the endo-module using PlatformIO, being aware to write the proper IP address of endo-module and PC of our group. Otherwise, we would not recieve any data.
-  3. At this step we ran the RoboDK virtual environemt (`3D_Orientation.rdk`) to visualize two virtual objects: a plane and a surgical needle.
-  4. Finally, we executed the `Receive_data_RPY_IMU_world.py` python program, which read the data from the endo-module and send it to the 3D-orientation object simulated in the virtual environment. Rotating the endo-module through roll, pitch and yaw movements we veryfied that the 3D virtual object was moving properly. 
+  3. At this step we ran the RoboDK virtual environemt (`3D_Orientation.rdk`) to visualize two virtual objects: a plane and a surgical needle. In order to visualize one object or the other, we had to make a modification to the file `Receive_data_RPY_IMU_world.py` by naming the variable `object_NAME` either *plane* or *surgical_needle*. 
+  4. Finally, we executed the `Receive_data_RPY_IMU_world.py` python program, which read the data from the endo-module and send it to the 3D-orientation object simulated in the virtual environment. Rotating the endo-module through roll, pitch and yaw movements we realized that the objects were not moving properly. Specifically, the **Yaw** movement around the *Z-axis* was correct but nevertheless the **Pitch** (around *Y-axis*) and **Roll** movements (around the *X-axis*) seemed to be inverted. 
+
