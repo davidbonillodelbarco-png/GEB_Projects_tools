@@ -21,6 +21,9 @@ This sensor is mounted on a PCB (Endo-module) with an ESP32 microprocessor to pr
 - Pitch: as a rotation across WCF y axis
 - Yaw: as a rotation across WCF z axis (corresponds to the Geographical Gravity direction)
 
+**Reference Materials**:
+- [ESP32 on Amazon](https://www.amazon.es/gp/product/B0D4QZ9CKD?th=1)
+- [IMU on Amazon](https://www.amazon.es/dp/B0785D9BWQ)
 
 ### Hardware-Software setup
 The **hardware setup** of this Lab session is based on:
@@ -39,7 +42,7 @@ The **software setup** of the first prototype of the DaVinci surgery system is b
 - Python script programs:
     - `Read_from_Endo.py`: simple reads the RPY Endo-module data
     - `Receive_data_RPY_IMU_world.py`: python program to read the data from the Endo-module and send it to the 3D-orientation object in simulated roboDK program environment (3D_Orientation.rdk)
-    - `Send_data_Endo_world_sim_sliders.py`: python program to send test orientation data to the the 3D-orientation object in simulated roboDK program environment (3D_Orientation.rdk)
+    - `Send_data_Endo_world_sim_sliders.py`: python program to send test orientation data with sliders to the computer with the same UDP wifi protocol as the ESP32 does.
 
 ### Laboratory session Tasks:
 
@@ -51,15 +54,28 @@ The proposed tasks for this first session are:
 ![rdk](././Images/3D_Orientation/3D_Orientation_final.png)
 - Run the `Receive_data_RPY_IMU_world.py` python program and review the corresponding orientation obtained in the 3D object selectes in roboDK. Take care about the proper Endo-module corresponding to your group!
 ![python](././Images/3D_Orientation/VScode_python.png)
-- Change the 3D object orientation to "surgical_needle". What you have to change in the python code?
 
-- Is the orientation correct? why or why not?
-- Make the necessary corrections in the code and verify the correct orientation in roboDK virtual environment.
+- Is the `plane` 3D object in roboDK moving properly?
+- What you have made to properly verify the orientation angles Roll, Pitch and Yaw?
+- Change the 3D object orientation to "surgical_needle". What you have to change in the python code?
 
 ### Laboratory session delivery
 
-You will have to upload a document including:
-
-- your first operating performances diagnostic, 
-- the corrections you have made in the code
-- your final conclusions 
+To develop the task delivery for this seminar you have to:
+- install in your labtop:
+  - Visual Studio Code: https://code.visualstudio.com/Download
+  - git: https://git-scm.com/install/
+  - python 3.11 version
+  - in VScode terminal install robodk library:
+    ````python
+    python -m pip install robodk
+    ````
+- Emulate what you have made in Seminar lab session:
+  - Execute `3D_Orientation.rdk` program to visualize a 3D object orientation in a virtual environment
+  - Execute the python program `Send_data_Endo_world_sim_sliders.py` to emulate the `Endo module` you have used in Seminar lab session
+  - Execute the python program `Receive_data_RPY_IMU_world.py` to read the data from the emulated Endo-module and perform the 3D-object orientation in `3D_Orientation.rdk` roboDK program environment
+  - Review 
+- You will have to create a new `3_LabProject_Delivery.md` markdown document including a short description of:
+  - what you have done
+  - how you have proceed with the questions we suggest in last section
+  - your final conclusions including a discussion on how you can use these tools in your `avant-projecte` or also in your `TFG` or future engineering projects.
