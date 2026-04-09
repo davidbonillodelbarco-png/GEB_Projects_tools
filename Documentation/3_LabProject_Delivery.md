@@ -22,10 +22,13 @@ Analysing the code in the `Receive_data_RPY_IMU_world.py` file, we found an erro
 
 `R_imu = rotz(y)*roty(p)*rotx(r)`
 
-By physically rotating the IMU and ESP32 around one axis, we can check if the visual representation is accurate and moves along the same axis too. However, we observe that the x-axis in the simulation is facing the y-axis of the sensor, while the y-axis of the simulation faces the negative part of the sensor's x-axis (they are rotated 90 degrees clockwise, so the airplane faces its right). In the previous formula, the last two terms of the multiplication above are incorrect, given that "p" (*pitch*) and "r" (*roll*) are swapped. This is due to the fact that *Pitch, Roll and Yaw* movements are defined as:
+As we can see in the video, by physically rotating the IMU and ESP32 around one axis, we can check if the visual representation is accurate and moves along the same axis too. However, we observe that the x-axis in the simulation is facing the y-axis of the sensor, while the y-axis of the simulation faces the negative part of the sensor's x-axis (they are rotated 90 degrees clockwise, so the airplane faces its right). In the previous formula, the last two terms of the multiplication above are incorrect, given that "p" (*pitch*) and "r" (*roll*) are swapped. This is due to the fact that *Pitch, Roll and Yaw* movements are defined as:
 + **Pitch:** Rotation around the x axis. 
 + **Roll:** Rotation arounf the y axis. 
 + **Yaw:** Rotation around the z axis.
+
+[![3D orientation in space of an IMU as an airplane]([https://youtube.com](https://youtube.com/shorts/GLxBDzUgLIo?feature=share))](https://youtube.com)
+
 
 By rewriting this line 126 as: `R_imu = rotz(y)*roty(r)*rotx(p)`, we correct this mistake. 
 
