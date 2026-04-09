@@ -13,7 +13,7 @@ The next step was to build up the Hardware-Software setup. The **hardware setup*
 #### SOFTWARE SETUP AND 3D VISUALIZATION 
 On the other hand, the **software setup** was based on an Arduino program for the endo-module to obtain the 3D orientation, a RoboDK virtual environment to visualize a 3D object orientation in that space, and Python script programs to read data. Once the system was build, we were asked to complete a series of tasks. 
 
-Firstly, we connected the Harware setup. Then, we uploaded the Arduino program (`Endowrist_IMU`) to the endo-module using PlatformIO, being aware to write the proper IP address of endo-module and PC of our group. Since our equipment was number 3, we had to change some numbers in the code, such as deviceId = "G**3**_Endo" or IPAddress receiverComputerIP(192, 168, 1, **3**5); otherwise, we would not recieve any data.At this step we ran the RoboDK virtual environemt (`3D_Orientation.rdk`) to visualize two virtual objects: a plane and a surgical needle. In order to visualize one object or the other, we had to make a modification to the file `Receive_data_RPY_IMU_world.py` by naming the variable `object_NAME` either *plane* or *surgical_needle*. 
+Firstly, we connected the Harware setup. Then, we uploaded the Arduino program (`Endowrist_IMU`) to the endo-module using PlatformIO, being aware to write the proper IP address of endo-module and PC of our group. Since our equipment was number 3, we had to change some numbers in the code, such as `deviceId = "G**3**_Endo"` or `IPAddress receiverComputerIP(192, 168, 1, **3**5)`; otherwise, we would not recieve any data.At this step we ran the RoboDK virtual environemt (`3D_Orientation.rdk`) to visualize two virtual objects: a plane and a surgical needle. In order to visualize one object or the other, we had to make a modification to the file `Receive_data_RPY_IMU_world.py` by naming the variable `object_NAME` either *plane* or *surgical_needle*. 
 
 #### CORRECTION OF THE ORIENTATION BUG
 Finally, we executed the `Receive_data_RPY_IMU_world.py` python program, which read the data from the endo-module and send it to the 3D-orientation object simulated in the virtual environment. When rotating the endo-module through roll, pitch and yaw movements we realized that the objects were not moving properly. Specifically, the **Yaw** movement around the *Z-axis* was correct but nevertheless the **Pitch** (around *Y-axis*) and **Roll** movements (around the *X-axis*) seemed to be inverted. 
@@ -30,3 +30,4 @@ However, we observe that the two last terms of the multiplication above are inco
 By rewriting this line 126 as: `R_imu = rotz(y)*roty(r)*rotx(p)`, we correct this mistake. 
 
 ### CONCLUSIONS
+----
